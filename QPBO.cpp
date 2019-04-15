@@ -23,6 +23,12 @@
 #include <string.h>
 #include "QPBO.h"
 
+template <> 
+inline void QPBO<int>::get_type_information(const char*& type_name, const char*& type_format){
+    type_name = "int";
+    type_format = "d";
+}
+
 
 template <typename REAL> 
 	QPBO<REAL>::QPBO(int node_num_max, int edge_num_max, void (*err_function)(const char *))
@@ -915,4 +921,6 @@ template <typename REAL>
 	}
 }
 
-#include "instances.inc"
+template class QPBO<int>;
+
+// #include "instances.inc"
