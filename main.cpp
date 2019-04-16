@@ -15,7 +15,7 @@ QPBO<REAL>* read_qubo_from_file(const char* filename){
     fscanf(fp, "%d %d %d", &num_vars, &num_unary, &num_pair);
     q = new QPBO<REAL>(num_vars, num_pair);
     q->AddNode(num_vars);
-    for(int i = 0; i < num_vars; ++i){
+    for(int i = 0; i < num_unary; ++i){
         int vi;
         REAL v;
         fscanf(fp, "%d %d", &vi, &v);
